@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-StocksellproductApplication<stocksellproduct>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.stocksellproduct.stocksellproduct.StocksellproductApplication",
+            "projectName": "stocksellproduct",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
