@@ -1,0 +1,5 @@
+com\stocksellproduct\resource\ProductResource.class
+com\stocksellproduct\repository\ProductRepository.class
+com\stocksellproduct\model\Product.class
+com\stocksellproduct\service\ProdutcService.class
+com\stocksellproduct\StocksellproductApplication.class
