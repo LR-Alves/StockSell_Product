@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-
 public class ProdutcService {
 
     private final ProductRepository productRepository;
@@ -48,15 +47,24 @@ public class ProdutcService {
         productRepository.save(saveProduct);
     }
 
-//    public void updateProduct(Product updateProduct) {
-//        try{
-//            Product existingProduct = productRepository.getById(id) ;
-//            if(updateProduct)
-//        productRepository.save(updateProduct);
-//    }
 
     public void deletProduct(Long id) {
         productRepository.deleteById(id);
     }
+
+
+//    public void updateProduct(Long id , Product updateProduct) {
+//        try{
+//            Product existingProduct = productRepository.getById(id);
+//            if(updateProduct.getNome() != null )
+//                if(updateProduct.isStatus)){
+//                existingProduct.SetNome(updateProduct.getNome());
+//            }
+//            productRepository.save(existingProduct);
+//        }catch (Exception e){
+//            throw  new Exception(id);
+//        }
+//    }
+
 }
 
