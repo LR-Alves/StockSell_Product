@@ -4,7 +4,6 @@ import com.stocksellproduct.model.Product;
 import com.stocksellproduct.service.ProdutcService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +15,8 @@ import java.util.List;
 @RequestMapping("/v1")
 public class ProductResource {
 
+
+    private Product product;
 
     private final  ProdutcService produtcService ;
 
@@ -41,16 +42,15 @@ public ResponseEntity<List<Product>> getAllProduct() {
         return produtcService.getProductByid(id).map(product -> new ResponseEntity<>(product, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-//    @PostMapping
-//    public ResponseEntity<Product> addProduct(@RequestBody Product product) {
-//        produtcService.addproduct(product);
-//        return new ResponseEntity<>(product, HttpStatus.CREATED);
-//    }
-//
+    @PostMapping
+    public ResponseEntity<Product> addProduct(@RequestBody Product product) {
+        produtcService.saveProduct(product);
+        return new ResponseEntity<>(product, HttpStatus.CREATED);
+    }
+
 //    @PutMapping
 //    public ResponseEntity<Product> updateProduct(@PathVariable Long id, Product updateProduct) {
-//        updateProduct.setId(id);
-//        produtcService.updateProduct(updateProduct);
+//        produtcService.updateProduct(id , updateProduct);
 //        return new ResponseEntity<>(updateProduct, HttpStatus.OK);
 //
 //    }

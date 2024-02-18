@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
+
 @Service
 
 public class ProdutcService {
@@ -47,13 +48,15 @@ public class ProdutcService {
         productRepository.save(saveProduct);
     }
 
-    public void updateProduct(Product updateProduct) {
-        productRepository.save(updateProduct);
-    }
+//    public void updateProduct(Product updateProduct) {
+//        try{
+//            Product existingProduct = productRepository.getById(id) ;
+//            if(updateProduct)
+//        productRepository.save(updateProduct);
+//    }
 
     public void deletProduct(Long id) {
         productRepository.deleteById(id);
-        ;
     }
 }
 
